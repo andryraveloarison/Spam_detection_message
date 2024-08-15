@@ -1,0 +1,9 @@
+.homeDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linearButton {
+    background: linear-gradient(309.22deg, #80BD28 16.83%, #0291BD 94.93%)
+}
