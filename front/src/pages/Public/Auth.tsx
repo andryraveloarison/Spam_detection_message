@@ -20,13 +20,13 @@ const Auth: React.FC = () => {
                   <div className="toggle-panel toggle-left">
                       <h1>Hiverina!</h1>
                       <p>Raha efa manana kaonty </p>
-                      <button className="hidden" id="login" onClick={() => {setIsActive(false)}}>Connexion</button>
+                      <button className="hidden" id="login" onClick={() => {setIsActive(false)}}>Hampiasa</button>
 
                   </div>
                   <div className="toggle-panel toggle-right">
                       <h1>Tongasoa</h1>
                       <p>Mbola tsy manana kaonty ve ?</p>
-                      <button className="hidden" id="register" onClick={() => {setIsActive(true)}}>Inscription</button>
+                      <button className="hidden" id="register" onClick={() => {setIsActive(true)}}>Hamorona</button>
                   </div>
               </div>
           </div>

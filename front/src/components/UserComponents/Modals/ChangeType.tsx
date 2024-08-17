@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React from "react";
 import "./ChangeType.css"
 import { messageService } from "../../../services/message.service";
 
@@ -7,18 +7,20 @@ import { messageService } from "../../../services/message.service";
 type CustomerModalProps = {
   idMessage: number;
   type: string;
+  message: string;
   cancelModal: () => void;
 };
 
-const ChangeType: React.FC<CustomerModalProps>  = ({ idMessage , type , cancelModal}) => {
-
-  if (type == "spam"){
-    type = "ham"
-  }else {
-    type = "spam"
-  }
+const ChangeType: React.FC<CustomerModalProps>  = ({ idMessage ,message, type , cancelModal}) => {
+  
+  type = type === "spam" ? "ham" : "spam";
 
   const updateMessage = async() => {
+        const newLine = {
+            message: message,
+            type: type
+        }
+        await messageService.updateBaseIa(newLine)
         await messageService.updateMessage(idMessage).then(() => {
             window.location.reload()
         })

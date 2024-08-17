@@ -4,3 +4,13 @@
     top:8px;
     z-index: 12000000;
 }
+
+
+.update-model {
+    position: fixed;
+    right: 120px;
+    top:8px;
+    z-index: 12000000;
+    background-color: var(--primary);
+    color: black;
+}

@@ -6,8 +6,9 @@ import pandas as pd
 import csv
 import src.utils.function as function
 from tqdm import tqdm
-
-
+import subprocess
+import sys
+import threading
 
 def update():
     df = pd.read_csv('data/twitter_train.csv', sep=',', quotechar='"', quoting=csv.QUOTE_ALL, low_memory=False)
@@ -42,9 +43,10 @@ def update():
 
     dataNum.to_csv(fichier_csv, index=False)
 
+    loadData.reloadModel()
+    
     function.createModel()
 
-    global modele
-    modele = loadData.reloadModel()
+    loadData.reloadModel()
 
     return "Test"

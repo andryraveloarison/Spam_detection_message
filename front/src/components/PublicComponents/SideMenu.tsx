@@ -6,12 +6,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
-import PersonIcon from '@mui/icons-material/Person';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-
-
-
+import SendIcon from '@mui/icons-material/Send';
+import SmsFailedIcon from '@mui/icons-material/SmsFailed';
+import MailIcon from '@mui/icons-material/Mail';
 interface sideMenuInterface{
     username: string,
     role: number
@@ -54,8 +52,8 @@ const sidemenu = (user: sideMenuInterface) => {
               style={{ textDecoration: "none" }}
             >
               <div className="nav">
-                <PersonIcon className="nav-icon" />
-                Send 
+                <SendIcon className="nav-icon" />
+                Handefa 
               </div>
             </NavLink>
             <NavLink
@@ -64,8 +62,8 @@ const sidemenu = (user: sideMenuInterface) => {
               style={{ textDecoration: "none" }}
             >
               <div className="nav">
-                <BarChartIcon className="nav-icon" />
-                Reception
+                <MailIcon className="nav-icon" />
+                Hafatra
               </div>
             </NavLink>
 
@@ -76,7 +74,7 @@ const sidemenu = (user: sideMenuInterface) => {
               style={{ textDecoration: "none" }}
             >
               <div className="nav">
-                <PermContactCalendarIcon className="nav-icon" />
+                <SmsFailedIcon className="nav-icon" />
                 Spam
               </div>
             </NavLink>

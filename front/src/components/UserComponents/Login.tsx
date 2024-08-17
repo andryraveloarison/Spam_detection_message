@@ -51,17 +51,17 @@ const Login: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                placeholder="maily"
                 required
               />
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+                placeholder="teny fanalahidy"
                 required
               />
-              <button id="login" className="buttonConnexion">Connexion</button>
+              <button id="login" className="buttonConnexion">Hampiasa</button>
             </form>
           </div>
 

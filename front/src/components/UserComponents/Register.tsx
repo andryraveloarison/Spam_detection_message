@@ -118,7 +118,7 @@ const Register: React.FC = () => {
                 placeholder="Password"
               />
               
-              <button id="register" className="buttonRegister">Inscription</button>
+              <button id="register" className="buttonRegister">Hamorona</button>
             </form>
           </div>
 

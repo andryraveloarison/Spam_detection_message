@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { messageService } from '../../../services/message.service';
 import { MessageResponseDto } from '../../../types/MessageInterface';
 import ChangeType from '../../../components/UserComponents/Modals/ChangeType';
-
+import '../../../styles/User/message.css'
 const Discussion: React.FC = () => {
   const location = useLocation();
   const user = useSelector((state: RootState) => state.auth.user)
@@ -34,9 +34,14 @@ const Discussion: React.FC = () => {
             <div 
                 key={message.messageId} 
                 onClick={()=>selectMessage(message)}
-                style={{ listStyleType: 'none'}}
+                style={{ listStyleType: 'none', cursor: "pointer",
+                justifyContent: message.senderId == user?.id? "end" : "start"
+            }}
+                className='div-one-message'
             >
-            <li style={{textAlign: message.senderId == user?.id? "end" : "start", textDecoration:"none"}}>{message.message}</li>
+            <li style={{textAlign: message.senderId == user?.id? "end" : "start", textDecoration:"none"}}
+                className='list-message'
+            >{message.message}</li>
             </div>
         ));
 
@@ -60,12 +65,18 @@ const Discussion: React.FC = () => {
 
   return (
     <>
-        <h1> Discussion {type == "spam" && type} avec {contact.nom}</h1>
-        { displayMessages() }
+        <div className='div-discussion'>
+            <h1 className='header-discussion'>   {contact.nom} {type == "spam" && "("+type+")"}</h1>
+            <div className='div-message'>
+                { displayMessages() }
+            </div>
 
+        </div>
+        
         {modal === "activate" && (
         <ChangeType
           idMessage={message.messageId}
+          message={message.message}
           type={type}
           cancelModal={() => setModal("")} // Pass an inline function
           />

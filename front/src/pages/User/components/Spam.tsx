@@ -20,7 +20,7 @@ const Spam: React.FC = () => {
     const displayContacts = () => {
       return contacts.map((contact) => (
         <div key={contact.contactId} onClick={() => handleContactClick(contact)}>
-          <li>{contact.nom}</li>
+          <li style={{cursor: "pointer"}}>{contact.nom}</li>
         </div>
       ));
     };

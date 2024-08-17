@@ -51,7 +51,6 @@ export class MessageService {
         
         const type = response.data.type; 
 
-        console.log(type)
         let newMessage = {
           sender: sender,
           receiver: receiver,
@@ -140,13 +139,26 @@ export class MessageService {
       const data = []
 
       messages.map((message) => {
-        const newMessage = {
-          messageId: message.id,
-          senderId: message.sender.id,
-          receiverId: message.receiver.id,
-          message: message.message
+        let isAccepted =false
+        if (discussionDto.senderId == message.sender.id && discussionDto.receiverId == message.receiver.id){
+         isAccepted = true
         }
-        data.push(newMessage)
+
+        if(discussionDto.senderId == message.receiver.id && discussionDto.receiverId == message.sender.id){
+          isAccepted = true
+        }
+
+
+        if(isAccepted){
+          const newMessage = {
+            messageId: message.id,
+            senderId: message.sender.id,
+            receiverId: message.receiver.id,
+            message: message.message
+          }
+          data.push(newMessage)
+        }
+        
       })
 
       return data

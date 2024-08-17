@@ -19,7 +19,7 @@ const Reception: React.FC = () => {
     const displayContacts = () => {
       return contacts.map((contact) => (
         <div key={contact.contactId} onClick={() => handleContactClick(contact)}>
-          <li>{contact.nom}</li>
+          <li style={{cursor: "pointer"}}>{contact.nom}</li>
         </div>
       ));
     };
@@ -51,7 +51,7 @@ const Reception: React.FC = () => {
     return (
       <>
   
-        <h1>Boite de reception </h1>
+        <h1>Hafatra</h1>
         <h1></h1>
         {displayContacts()}
 

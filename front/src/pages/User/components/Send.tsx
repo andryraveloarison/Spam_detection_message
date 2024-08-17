@@ -39,11 +39,11 @@ const Send: React.FC  = () => {
     <div className="send-modal">
       <div className="send-overlay"></div>
       <div className="add-device-send-modal">
-        <h1>Send Message</h1>
+        <h1>Handefa hafatra</h1>
         <form onSubmit={handleSubmit}>
         <div className="add-device-form">
           <div className="form-element">
-            <label>Send to</label>
+            <label>Alefa any amin'i</label>
             <input
                 type="email"
                 name="receiverEmail"
@@ -52,7 +52,7 @@ const Send: React.FC  = () => {
               />
           </div>
           <div className="form-element">
-            <label>Message</label>
+            <label>Hafatra</label>
 
             <textarea
               name="message"
@@ -64,7 +64,7 @@ const Send: React.FC  = () => {
         </div>
         <div className="btn-group">
           <button className="add-device-button">
-            Send Message
+            Alefa
           </button>
         </div>
         </form>

@@ -17,11 +17,15 @@ def load_api_keys():
 def reloadModel():
     global modele
     modele = joblib.load('modele/modele.joblib')
+
+    global dataNum
+    dataNum = pd.read_csv('data/donneeNumeric.csv', sep=',', quotechar='"', quoting=csv.QUOTE_ALL, low_memory=False)
     return modele
+
 
 
 authorized_keys = load_api_keys()
 
-modele = reloadModel()
+modele = joblib.load('modele/modele.joblib')
 
 dataNum = pd.read_csv('data/donneeNumeric.csv', sep=',', quotechar='"', quoting=csv.QUOTE_ALL, low_memory=False)

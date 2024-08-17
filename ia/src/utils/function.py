@@ -164,7 +164,9 @@ def createDataTest(dataTest, dataNum):
 
 
 def createModel():
-    df = pd.read_csv('data/donneeNumeric.csv')
+    global dataNum
+    loadData.reloadModel
+    df = loadData.dataNum
     df = shuffle(df)
 
     X = df.iloc[:, 0:-2].values
@@ -209,6 +211,7 @@ def getSentiment(inputTest, dataNum):
     
     
     dataInsert = dataInsert.iloc[:, :-2]
+    global modele
     modele = loadData.reloadModel()
     prediction = modele.predict(dataInsert)
     return prediction

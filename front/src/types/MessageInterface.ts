@@ -42,3 +42,9 @@ export interface MessageResponseDto {
     receiverID: string;
     message: string;
 }
+
+
+export interface UpdateBase {
+    message: string;
+    type: string
+}

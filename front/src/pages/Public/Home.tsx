@@ -14,8 +14,8 @@ const Home: React.FC = () => {
     return (
       <div className="homeDiv">
   
-        <h1>Smart Sales Insights</h1>
-        <button className="linearButton" onClick={()=> {navigateLogin()}}> Get started</button>
+        <h1>Email Malagasy</h1>
+        <button className="linearButton" onClick={()=> {navigateLogin()}}> Hanomboka!</button>
        
       </div>
     )
